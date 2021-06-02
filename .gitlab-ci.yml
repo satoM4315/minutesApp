@@ -1,0 +1,28 @@
+
+stages:
+  - server
+  - front
+
+server:
+  image: golang:latest
+
+  stage: server
+
+  before_script:
+    - mkdir -p dist/public
+    - cp ./src/public/template.html ./dist/public/template.html
+    - go build
+
+  script:
+    - go test -v *.go
+
+front:
+  image: node:latest
+
+  stage: front
+
+  before_script:
+    - npm ci
+
+  script:
+    - npx gulp

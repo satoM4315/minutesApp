@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>{{.title}}</title>
+	<link rel="stylesheet" href="/dist/public/style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+</head>
+<body>
+	<div id={{.header}}></div>
+	<p></p>
+	{{range .id}}
+	<div id={{.}}  align="center"></div>
+	{{end}}
+
+  <script src="/dist/bundle.js"></script>
+</body>
+</html>
